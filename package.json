@@ -1,0 +1,15 @@
+{
+  "name" : "lightv2-client",
+  "version" : "1.0.1",
+  "description" : "",
+  "author" : "Edward Komissarov",
+  "license" : "ISC",
+  "main" : "index.js",
+  "scripts" : {
+    "build" : "tsc",
+    "dev" : "tsc --watch"
+  },
+  "devDependencies" : {
+    "typescript" : "^4.0.0"
+  }
+}
