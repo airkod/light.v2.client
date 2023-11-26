@@ -5,7 +5,9 @@
   "author" : "Edward Komissarov",
   "license" : "ISC",
   "main" : "index.js",
+  "types": "dist/index.d.ts",
   "scripts" : {
+    "deploy": "tsc && git add . && git commit -am \"update\" && git push",
     "build" : "tsc",
     "dev" : "tsc --watch"
   },
@@ -13,3 +15,4 @@
     "typescript" : "^4.0.0"
   }
 }
+
