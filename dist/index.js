@@ -140,6 +140,9 @@ export class LightV2Client {
             body: { command },
         });
     }
+    signatureLength() {
+        return !!this.config.signature.length;
+    }
     build() {
         return new Builder(this);
     }

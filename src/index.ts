@@ -154,6 +154,10 @@ export class LightV2Client {
     });
   }
 
+  public signatureLength(): boolean {
+    return !!this.config.signature.length;
+  }
+
   public build(): Builder {
     return new Builder(this);
   }
