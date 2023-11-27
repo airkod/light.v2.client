@@ -142,14 +142,6 @@ export class LightV2Client {
     build() {
         return new Builder(this);
     }
-    sample() {
-        return new SampleClass();
-    }
-}
-export class SampleClass {
-    constructor() {
-        this.field = 10;
-    }
 }
 export class Builder {
     constructor(client) {

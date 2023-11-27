@@ -22,10 +22,6 @@ export declare class LightV2Client {
     deleteMany(collection: string, cond: any): Promise<void>;
     command<T>(collection: string, command: any): Promise<T>;
     build(): Builder;
-    sample(): SampleClass;
-}
-export declare class SampleClass {
-    field: number;
 }
 export declare class Builder {
     private client;
