@@ -3,6 +3,9 @@ import { Session } from "./interfaces/session";
 import { CryptHelper } from "./helpers/crypt-helper";
 import { Workspace } from "./interfaces/workspace";
 import { Body } from "./interfaces/body";
+import { Builder } from "./builder";
+
+export { Builder } from "./builder";
 
 export class LightV2Client {
   config: Config = null;
@@ -151,5 +154,9 @@ export class LightV2Client {
       meta: { collection: collection },
       body: { command },
     });
+  }
+
+  public builder(): Builder {
+    return new Builder(this);
   }
 }

@@ -6,7 +6,7 @@ export interface Workspace {
     apiKey?: string;
     accessToken?: string;
   };
-  body?: Body | {
+  body?: Body & {
     login?: string;
     password?: string;
   };

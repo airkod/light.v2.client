@@ -8,6 +8,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { CryptHelper } from "./helpers/crypt-helper";
+import { Builder } from "./builder";
+export { Builder } from "./builder";
 export class LightV2Client {
     constructor(config) {
         this.config = null;
@@ -138,5 +140,8 @@ export class LightV2Client {
             meta: { collection: collection },
             body: { command },
         });
+    }
+    builder() {
+        return new Builder(this);
     }
 }

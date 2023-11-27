@@ -1,6 +1,8 @@
 import { Config } from "./interfaces/config";
 import { Session } from "./interfaces/session";
 import { Body } from "./interfaces/body";
+import { Builder } from "./builder";
+export { Builder } from "./builder";
 export declare class LightV2Client {
     config: Config;
     session: Session;
@@ -22,4 +24,5 @@ export declare class LightV2Client {
     deleteOne(collection: string, cond: any): Promise<void>;
     deleteMany(collection: string, cond: any): Promise<void>;
     command<T>(collection: string, command: any): Promise<T>;
+    builder(): Builder;
 }
