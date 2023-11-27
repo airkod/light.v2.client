@@ -9,6 +9,8 @@ export class LightV2Client {
   private config: Config = null;
   private session: Session = null;
 
+  public build: Builder = new Builder(this);
+
   constructor(config: Config) {
     this.config = config;
   }
@@ -152,17 +154,5 @@ export class LightV2Client {
       meta: { collection: collection },
       body: { command },
     });
-  }
-
-  public signatureLength(): boolean {
-    return !!this.config.signature.length;
-  }
-
-  public build(): Builder {
-    return new Builder(this);
-  }
-
-  public b(): number {
-    return 10;
   }
 }

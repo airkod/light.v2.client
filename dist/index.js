@@ -13,6 +13,7 @@ export class LightV2Client {
     constructor(config) {
         this.config = null;
         this.session = null;
+        this.build = new Builder(this);
         this.config = config;
     }
     auth() {
@@ -139,14 +140,5 @@ export class LightV2Client {
             meta: { collection: collection },
             body: { command },
         });
-    }
-    signatureLength() {
-        return !!this.config.signature.length;
-    }
-    build() {
-        return new Builder(this);
-    }
-    b() {
-        return 10;
     }
 }

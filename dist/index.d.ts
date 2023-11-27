@@ -4,6 +4,7 @@ import { Builder } from "./builder";
 export declare class LightV2Client {
     private config;
     private session;
+    build: Builder;
     constructor(config: Config);
     private auth;
     private isValidAccessToken;
@@ -22,7 +23,4 @@ export declare class LightV2Client {
     deleteOne(collection: string, cond: any): Promise<void>;
     deleteMany(collection: string, cond: any): Promise<void>;
     command<T>(collection: string, command: any): Promise<T>;
-    signatureLength(): boolean;
-    build(): Builder;
-    b(): number;
 }
