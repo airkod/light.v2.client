@@ -1,1 +1,4 @@
-export interface Session {}
+export interface Session {
+  accessToken: string;
+  accessTokenExpires: number;
+}
