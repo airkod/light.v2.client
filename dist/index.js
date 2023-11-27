@@ -9,9 +9,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Client = void 0;
+exports.LightV2Client = void 0;
 const crypt_helper_1 = require("./helpers/crypt-helper");
-class Client {
+class LightV2Client {
     constructor(config) {
         this.config = null;
         this.session = null;
@@ -143,4 +143,4 @@ class Client {
         });
     }
 }
-exports.Client = Client;
+exports.LightV2Client = LightV2Client;

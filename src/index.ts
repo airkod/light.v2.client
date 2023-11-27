@@ -4,7 +4,7 @@ import { CryptHelper } from "./helpers/crypt-helper";
 import { Workspace } from "./interfaces/workspace";
 import { Body } from "./interfaces/body";
 
-export class Client {
+export class LightV2Client {
   config: Config = null;
   session: Session = null;
 

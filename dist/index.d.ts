@@ -1,7 +1,7 @@
 import { Config } from "./interfaces/config";
 import { Session } from "./interfaces/session";
 import { Body } from "./interfaces/body";
-export declare class Client {
+export declare class LightV2Client {
     config: Config;
     session: Session;
     constructor(config: Config);
