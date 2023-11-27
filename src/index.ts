@@ -5,11 +5,9 @@ import { Workspace } from "./interfaces/workspace";
 import { Body } from "./interfaces/body";
 import { Builder } from "./builder";
 
-export { Builder } from "./builder";
-
 export class LightV2Client {
-  config: Config = null;
-  session: Session = null;
+  private config: Config = null;
+  private session: Session = null;
 
   constructor(config: Config) {
     this.config = config;
@@ -156,7 +154,7 @@ export class LightV2Client {
     });
   }
 
-  public builder(): Builder {
+  public build(): Builder {
     return new Builder(this);
   }
 }
