@@ -6,6 +6,7 @@
   "license" : "ISC",
   "main" : "index.js",
   "types": "dist/index.d.ts",
+  "module" : "dist",
   "scripts" : {
     "deploy": "tsc && git add . && git commit -am \"update\" && git push",
     "build" : "tsc",
