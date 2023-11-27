@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,10 +7,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.LightV2Client = void 0;
-const crypt_helper_1 = require("./helpers/crypt-helper");
-class LightV2Client {
+import { CryptHelper } from "./helpers/crypt-helper";
+export class LightV2Client {
     constructor(config) {
         this.config = null;
         this.session = null;
@@ -50,7 +47,7 @@ class LightV2Client {
         return new Promise((resolve, reject) => {
             data.meta = data.meta || {};
             data.meta.apiKey = this.config.apiKey;
-            crypt_helper_1.CryptHelper.encrypt(data, this.config.signature)
+            CryptHelper.encrypt(data, this.config.signature)
                 .then((body) => {
                 const requestOptions = {
                     method: "POST",
@@ -65,7 +62,7 @@ class LightV2Client {
                     if (response.status === 401) {
                         yield this.auth();
                         data.meta.accessToken = this.session.accessToken;
-                        const body = yield crypt_helper_1.CryptHelper.encrypt(data, this.config.signature);
+                        const body = yield CryptHelper.encrypt(data, this.config.signature);
                         requestOptions.body = JSON.stringify(body);
                         return fetch(this.config.host + url, requestOptions);
                     }
@@ -73,7 +70,7 @@ class LightV2Client {
                 }))
                     .then(data => data.json())
                     .then(data => {
-                    crypt_helper_1.CryptHelper.decrypt(data, this.config.signature)
+                    CryptHelper.decrypt(data, this.config.signature)
                         .then((decryptedData) => resolve(decryptedData))
                         .catch(e => reject(e));
                 })
@@ -143,4 +140,3 @@ class LightV2Client {
         });
     }
 }
-exports.LightV2Client = LightV2Client;
