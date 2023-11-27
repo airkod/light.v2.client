@@ -157,4 +157,8 @@ export class LightV2Client {
   public build(): Builder {
     return new Builder(this);
   }
+
+  public b(): number {
+    return 10;
+  }
 }

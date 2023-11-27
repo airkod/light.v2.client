@@ -143,4 +143,7 @@ export class LightV2Client {
     build() {
         return new Builder(this);
     }
+    b() {
+        return 10;
+    }
 }

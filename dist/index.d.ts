@@ -23,4 +23,5 @@ export declare class LightV2Client {
     deleteMany(collection: string, cond: any): Promise<void>;
     command<T>(collection: string, command: any): Promise<T>;
     build(): Builder;
+    b(): number;
 }
